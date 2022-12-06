@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="input.css">
     <title>Manage Landing Page</title>
 </head>
 <body>
+    <!-- Navbar | relative utility class positions relative, as hamburger menu wil be positioned absolute -->
 
         <nav class="relative container mx-auto p-6">
-
+    
+    <!-- Flex Container | contains logo, menu, button -->
         <div class="flex items-center justify-between"> 
 
+    <!-- padding-top 2, this contains the logo for the website -->
             <div class="pt-2">
                 <img src="img/logo.svg" alt="" />
             </div>
 
+    <!-- menu items | "space-x-6" means everything between these items is 1.5 rem units, the hidden class will hide the items on a smaller screen
+    the classes allow the items to be colored when the user hovers over them  -->
             <div class="hidden space-x-6 md:flex">
                 <a href="#" class="hover:text-darkGrayishBlue">Pricing</a>
                 <a href="#" class="hover:text-darkGrayishBlue">Product</a>
@@ -25,25 +31,36 @@
                 <a href="#" class="hover:text-darkGrayishBlue">Community</a>
             </div>
 
+    <!-- Button | these tailwind features are creating a "fake" button for users to get started with the program -->
             <a href="#" 
                 class=" hidden p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight md:block">
                 Get Started
             </a>
 
-        </div>
-
-
-        <!-- hamburger icon -->
+    <!-- Hamburger Icon -->
         <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
             <span class="hamburger-top"></span>
             <span class="hamburger-middle"></span>
             <span class="hamburger-bottom"></span>
         </button>
-        
+
+    <!-- Mobile Menu -->
+        <div class="md:hidden">
+            <div id="menu" class="absolute flex-col items-center self-end hidden py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="#">Pricing </a>
+                <a href="#">Product </a>
+                <a href="#">About Us </a>
+                <a href="#">Careers </a>
+                <a href="#">Community </a>
+            </div>
+        </div>
+
+        </div>
+
         <!-- Mobile Menu -->
 
         <div class="md:hidden">
-            <div id="menu" class="absolute flex flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+            <div id="menu" class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
                 <a href="#">Prcing </a>
                 <a href="#">Product </a>
                 <a href="#">About Us </a>
@@ -54,12 +71,14 @@
         </div>
     </nav>
 
+    <!-- Hero Section | contains flex container, which will be row on larger screen but column on smaller screen -->
     <section id="hero"> 
 
         <div class="container flex flex-col-reverse items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 md:flex-row">
         
-
+    <!-- Left Item Section-->
             <div class="flex flex-col mb-32 space-y-12 md:w-1/2">
+
                 <h1 class="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left">
                     Bring everyone together to build better products
                 </h1>
@@ -78,6 +97,7 @@
                 </div>
             </div>
             
+    <!-- Image Section -->
             <div class="md:w-1/2">
             <img src="img/illustration-intro.svg" alt="">
             </div>
@@ -85,9 +105,13 @@
         </div>
     </section>
 
+    <!-- Features Section -->
     <section id="features">
+
+    <!-- Flex Container -->
         <div class="container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row">
         
+    <!-- What's Different? -->
             <div class="flex flex-col space-y-12 md:w-1/2">
                 <h2 class="max-w-md text-4xl font-bold text-center md:text-left">
                     What's different about Manage?
@@ -99,10 +123,12 @@
                 </p>
             </div>
 
+    <!-- Numbered list -->
             <div class="flex flex-col space-y-8 md:w-1/2">
 
-                <!-- item #1 -->
+    <!-- List Item #1 -->
                 <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+    <!-- Heading --> 
                     <div class="rounded-l-full bg-brightRedSupLight md:bg-transparent">
 
                         <div class="flex items-center space-x-2">
@@ -115,9 +141,8 @@
                             </h3>
                         </div>
                     </div>
-
+    <!-- this is showing the larger screen version of above. it is hidden automatically for small screens.-->
                     <div>
-
                         <h3 class="hidden mb-4 text-lg font-bold md:block">
                             Track company-wide progress
                         </h3>
@@ -132,7 +157,7 @@
 
                 </div>
 
-                <!-- item #2 -->
+    <!-- List Item #2 -->
                 <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
                     <div class="rounded-l-full bg-brightRedSupLight md:bg-transparent">
 
@@ -163,7 +188,7 @@
 
                 </div>
 
-                <!-- item #3 -->
+    <!-- List Item #3 -->
                 <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
                     <div class="rounded-l-full bg-brightRedSupLight md:bg-transparent">
 
@@ -200,14 +225,18 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
     <section id="testimonials">
 
+    <!-- Container to heading and testimonial blocks -->
         <div class="max-w-6xl px-5 mx-auto mt-32 text-center">
 
+    <!-- Heading -->
             <h2 class="text-4xl font-bold text-center">
                 What's different about Manage?
             </h2>
 
+    <!-- Testimonial Container -->
             <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
                 <!-- Testimonial #1-->
                 <div class="flex flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3">
@@ -222,10 +251,10 @@
                     </p>
                 </div>
 
-                <!-- Testimonial #2-->
-                <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3">
+                <!-- Testimonial #2 | hidden on small screens, takes up 1/3 space on medium screens and up-->
+            <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3">
 
-                    
+        <!-- Able to affect image size by creating a class with tailwind in the img tag -->
                     <img src="img/avatar-ali.png" class="w-16 -mt-14" alt="">
                     <h5 class="text-lg font-bold">Ali Bravo</h5>
                     <p class="text-sm text-darkGrayishBlue">
@@ -233,9 +262,10 @@
                         using Manage. There is no more cross-channel confusion and everyone is much
                         more focused.""
                     </p>
-                </div>
-                <!-- Testimonial #3 !-->
-                <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3">
+            </div>
+                
+        <!-- Testimonial #3 | hidden on small screens, takes up 1/3 space on medium screens and up -->
+            <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3">
 
                     
                     <img src="img/avatar-richard.png" class="w-16 -mt-14" alt="">
@@ -248,6 +278,7 @@
                 </div>
             </div>
 
+    <!-- Button -->
             <div class="my-16">
 
                 <a href="#" 
@@ -257,12 +288,16 @@
 
             </div>
         </div>
+
     </section>
+
+    <!-- CTA Section | Because we want the whole section to have a background, we add a class with colors to the section tag-->
 
     <section id="cta" class="bg-brightRed">
 
         <div class="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
 
+    <!-- Heading | leading tight brings in the letter spacing, text is white because it is on a bright red background -->
             <h2 class="text-5xl font-bold leading-tight text-center text-white md:text-4xl md:max-w-xl md:text-left">
                 Simplify how your team works today
             </h2>
@@ -274,52 +309,61 @@
             </a>
             </div>
         </div>
+
     </section>
 
 
 
-<footer class="bg-veryDarkBlue">
+    <!-- Footer -->
+    <footer class="bg-veryDarkBlue">
+
     <!-- Main flex container -->
 
     <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
 
-        <!--logo & links container -->
+    <!--Logo & Social Links Container -->
 
-        <div class="flex flex-col-reverse-items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
+    <div class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start">
         
         
-            <div class="mx-auto my-6 text-center text-white md:hidden">
-                Copyright &copy; 2022, All Rights Reserved
-            </div>
-
-            <!-- logo -->
+    <div class="mx-auto my-6 text-center text-white md:hidden">
+        Copyright &copy; 2022, All Rights Reserved
+    </div>
+        <!-- Logo | Height is applied to the image -->
             <div>
                 <img src="img/logo-white.svg" class="h-8" alt="">
             
             </div>
 
-            <!-- social links container-->
+            <!-- Logo & Social Links Container-->
                 <div class="flex justify-center space-x-4">
+            <!-- Link #1 -->
+       
                     <a href="#">
                         <img src="img/icon-facebook.svg" alt="" class="h-8">
                     </a>
+            <!-- Link #2 -->
                     <a href="#">
                         <img src="img/icon-youtube.svg" alt="" class="h-8">
                     </a>
+            <!-- Link #3 -->
                     <a href="#">
                         <img src="img/icon-twitter.svg" alt="" class="h-8">
                     </a>
+            <!-- Link #4 -->
                     <a href="#">
                         <img src="img/icon-pinterest.svg" alt="" class="h-8">
                     </a>
+            <!-- Link #5 -->
                     <a href="#">
                         <img src="img/icon-instagram.svg" alt="" class="h-8">
                     </a>
+           
                 </div>
+    </div>
+  
 
-            </div>
-        </div>
-
+    <!-- List Container | There are two menus in here -->
             <div class="flex justify-around space-x-32">
                 <div class="flex flex-col space-y-3 text-white">
                     <a href="#" class="hover:text-brightRed">Home</a>
@@ -331,11 +375,10 @@
                     <a href="#" class="hover:text-brightRed">Careers</a>
                     <a href="#" class="hover:text-brightRed">Community</a>
                     <a href="#" class="hover:text-brightRed">Privacy Policy</a>
-                
                 </div>
             </div>
         
-        <!-- input container -->
+        <!-- Input Container -->
         <div class="flex flex-col justify-between">
             <form>
                 <div class="flex space-x-3">
@@ -349,14 +392,17 @@
                     </button>
                 </div>
             </form>
+
             <div class="hidden text-white md:block">
                 Copyright &copy; 2022, All Rights Reserved
             </div>
+
         </div>
     </div>
 
-</footer>
 
+    </footer>
 
+<script src="../js/script.js"> </script>
 </body>
 </html>
